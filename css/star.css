@@ -1,0 +1,288 @@
+/* 清除所有元素的 内，外边距，边框样式为C3 */
+/* 清除点击时的蓝色模块 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* 清除点击时的蓝色模块 */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 清除列表符号 */
+li {
+    list-style: none;
+}
+
+/* 清除超链接的下划线 */
+a {
+    text-decoration: none;
+}
+
+/* 清除高亮 */
+input,
+button {
+    outline: none;
+}
+
+/* 清除浮动 */
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 头部设置 */
+header {
+    display: flex;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 3.75rem;
+    justify-content: space-around;
+    align-items: center;
+    background-color: pink;
+}
+
+/* 三条杠（下拉菜单）设置 */
+header .list {
+    float: left;
+    width: 1.875rem;
+    height: 1.4375rem;
+    padding: 0.25rem 0;
+    cursor: pointer;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    background-clip: content-box;
+    background-color: white;
+}
+
+/* logo设置 */
+header img {
+    height: 3.75rem;
+}
+
+/* 主题设置 */
+header b {
+    float: left;
+    color: white;
+    cursor: default;
+    font-size: 220%;
+    animation: first 3s infinite linear alternate;
+}
+
+/* 主题文字变色动画 */
+@keyframes first {
+    0% {
+        color: #fff;
+    }
+
+    100% {
+        color: #ff7072;
+    }
+}
+
+/* 客服设置 */
+.Star {
+    z-index: 9;
+    position: fixed;
+    bottom: 15%;
+    right: 3%;
+    width: 4.375rem;
+    height: 4.375rem;
+    text-align: center;
+    line-height: 4.375rem;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: #000;
+}
+
+/* 中间设置 */
+.first {
+    width: 100%;
+    height: 100px;
+    margin-top: 3.75rem;
+}
+
+/* swiper */
+.swiper {
+    position: relative;
+    top: 3.75rem;
+    max-width: 26.5625rem;
+    height: 12.5rem;
+    background-color: #eee;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    display: none;
+    color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.swiper-pagination-bullet {
+    background-color: hotpink;
+}
+
+/* 中间布局设置 */
+.first ul {
+    display: flex;
+    width: 100%;
+    height: 6.25rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 中间小方块设置 */
+.first ul li {
+    width: 19%;
+    height: 5rem;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding-top: 1rem;
+    border: 1px solid black;
+    border-radius: 0.625rem;
+    background-color: pink;
+}
+
+/* 主体设置 */
+.bd {
+    width: 100%;
+    border-radius: 0.625rem 0.625rem 0 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 主体布局设置 */
+.bd ul {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+/* 主体>>>小方块内部布局设置 */
+.bd ul li {
+    display: flex;
+    width: 47%;
+    height: 16.25rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.3125rem;
+    flex-flow: column wrap;
+    margin: 0.4375rem 0;
+    background-color: #000;
+}
+
+/* 主体>>>小方块内部>>>展示区设置 */
+.bd ul li span {
+    width: 90%;
+    height: 10rem;
+    margin: 5%;
+    color: #000;
+    font-weight: bold;
+    font-size: 150%;
+    text-align: center;
+    line-height: 10rem;
+    background-color: #fff;
+}
+
+/* 主体>>>小方块内部>>>介绍区设置 */
+.bd ul li p {
+    height: 4.375rem;
+    margin: 0 10px 10px 0.625rem;
+    text-indent: 2rem;
+    overflow: scroll;
+}
+
+/* 隐藏 浏览器,介绍区 的滚动条 */
+body::-webkit-scrollbar,
+.bd ul li p::-webkit-scrollbar {
+    display: none;
+}
+
+/* 当设备最小宽度为430时 设置以下属性 */
+@media screen and (min-width: 430px) {
+
+    body,
+    header {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .swiper {
+        max-width: 1000px;
+        height: 400px;
+    }
+
+    .first ul li {
+        padding-top: 0.6rem;
+        height: 60px;
+        width: 240px;
+        font-size: 1.0625rem;
+    }
+
+    .bd ul li {
+        width: 180px;
+    }
+
+}
+
+/* 当设备宽度不超过 320px 时设置以下属性 */
+@media screen and (max-width: 320px) {
+
+    /* 设置元素宽度 */
+    body,
+    header,
+    .swiper {
+        width: 20rem;
+    }
+
+    /* 设置 中间及其下一级子级 的高度 */
+    .first,
+    .first ul {
+        height: 5rem;
+    }
+
+    /* 设置 中间及其下两级子级 的 上内边距，字体大小和高度 */
+    .first ul li {
+        padding-top: 0.6rem;
+        height: 60px;
+        font-size: 1.0625rem;
+    }
+
+}
